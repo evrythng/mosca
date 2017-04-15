@@ -1,7 +1,7 @@
 "use strict";
 
 var steed = require("steed");
-var pino = require("pino");
+var bunyan = require("bunyan");
 var EventEmitter = require("events").EventEmitter;
 
 module.exports = function(create, buildOpts) {
@@ -298,7 +298,7 @@ module.exports = function(create, buildOpts) {
       };
 
       var client = {
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         forward: function(topic, payload, options, pattern) {
           expect(topic).to.eql(packet1.topic);
           expect(payload).to.eql(packet1.payload);
@@ -324,7 +324,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -338,7 +338,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -356,7 +356,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -377,7 +377,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: true,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -398,7 +398,7 @@ module.exports = function(create, buildOpts) {
       var instance = this.instance;
       var client = {
         id: "my client id - 42",
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -421,7 +421,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: true,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -440,7 +440,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -462,7 +462,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -489,7 +489,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -517,7 +517,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -540,7 +540,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -563,7 +563,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 0
@@ -584,7 +584,7 @@ module.exports = function(create, buildOpts) {
     var client = {
       id: "my client id - 42",
       clean: false,
-      logger: pino({ level: "error" }),
+      logger: bunyan.createLogger({ name: "test", level: "error" }),
       subscriptions: {
         hello: {
           qos: 1
@@ -681,7 +681,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -706,7 +706,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: 1
         }
@@ -729,7 +729,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: 1
         }
@@ -753,7 +753,7 @@ module.exports = function(create, buildOpts) {
       var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           hello: {
             qos: 1
@@ -809,7 +809,7 @@ module.exports = function(create, buildOpts) {
     var client = {
       id: "my client id",
       clean: false,
-      logger: pino({ level: "error" }),
+      logger: bunyan.createLogger({ name: "test", level: "error" }),
       subscriptions: {
         hello: {
           qos: 1
@@ -859,7 +859,7 @@ module.exports = function(create, buildOpts) {
     var client = {
       id: "my client id - 42",
       clean: false,
-      logger: pino({ level: "error" }),
+      logger: bunyan.createLogger({ name: "test", level: "error" }),
       subscriptions: {
         "hello/#": {
           qos: 1
@@ -899,7 +899,7 @@ module.exports = function(create, buildOpts) {
     var client = {
       id: "my client id - 42",
       clean: false,
-      logger: pino({ level: "error" }),
+      logger: bunyan.createLogger({ name: "test", level: "error" }),
       subscriptions: {
         hello: {
           qos: 1
@@ -992,7 +992,7 @@ module.exports = function(create, buildOpts) {
         // TODO: if messageId is an integer then persist redis test fail !!!
         messageId : "42"
       };
-      
+
       server.persistClient(client, function() {
         server.storePacket(packet, function() {
           instance.streamOfflinePackets(client, function(err, p) {
@@ -1005,12 +1005,12 @@ module.exports = function(create, buildOpts) {
     });
 
     it("qos 0, retain true", function(done) {
-      
+
       var server = new EventEmitter();
       var instance = this.instance;
       instance.wire(server);
       instance.options.storeMessagesQos0 = false;
-      
+
       var packet = {
         topic : "hello/42",
         qos : 0,
@@ -1042,7 +1042,7 @@ module.exports = function(create, buildOpts) {
   });
 
   describe("storeMessagesQos0 = true", function() {
-    
+
     var client = {
       id : "my client id - 42",
       clean : false,
@@ -1058,12 +1058,12 @@ module.exports = function(create, buildOpts) {
     };
 
     it("qos 0, retain false", function(done) {
-      
+
       var server = new EventEmitter();
       var instance = this.instance;
       instance.wire(server);
       instance.options.storeMessagesQos0 = true;
-      
+
       var packet = {
         topic : "hello/42",
         qos : 0,
@@ -1081,16 +1081,16 @@ module.exports = function(create, buildOpts) {
           });
         });
       });
-      
+
     });
-    
+
     it("qos 0, retain true", function(done) {
-      
+
       var server = new EventEmitter();
       var instance = this.instance;
       instance.wire(server);
       instance.options.storeMessagesQos0 = true;
-      
+
       var packet = {
         topic : "hello/42",
         qos : 0,
@@ -1108,12 +1108,12 @@ module.exports = function(create, buildOpts) {
           });
         });
       });
-      
+
     });
   });
 
   describe("storeMessagesQos0 = true, multiple", function() {
-    
+
     var client = {
       id : "my client id - 42",
       clean : false,
@@ -1156,7 +1156,7 @@ module.exports = function(create, buildOpts) {
     };
 
     it("multiple qos 0", function(done) {
-      
+
       var server = new EventEmitter();
       var instance = this.instance;
       instance.wire(server);
@@ -1169,7 +1169,7 @@ module.exports = function(create, buildOpts) {
           server.storePacket(packet2, function() {
             server.storePacket(packet3, function() {
               instance.streamOfflinePackets(client, function(err, p) {
-			
+
                 packets.push(p);
 
                 if(packets.length == 3){
@@ -1198,7 +1198,7 @@ module.exports = function(create, buildOpts) {
         }
       }
     };
- 
+
     it("do not send expires packages", function(done) {
       var instance = this.instance;
 

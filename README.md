@@ -28,8 +28,8 @@ Mosca&nbsp;&nbsp;&nbsp;[![Build Status](https://travis-ci.org/mcollina/mosca.svg
 ### Standalone
 
 ```bash
-npm install mosca pino -g
-mosca -v | pino
+npm install mosca bunyan -g
+mosca -v | bunyan
 ```
 
 ### Embedded

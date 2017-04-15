@@ -1,7 +1,7 @@
 "use strict";
 
 var abstract = require("./abstract");
-var pino = require("pino");
+var bunyan = require("bunyan");
 var LevelUp = require("../../").persistence.LevelUp;
 var steed = require("steed");
 var tmpdir = require("osenv").tmpdir();
@@ -31,10 +31,10 @@ describe("mosca.persistence.LevelUp", function() {
 
   describe("two instances", function() {
     it("support restoring from disk", function(done) {
-      var client = { 
+      var client = {
         id: "my client id - 42",
         clean: false,
-        logger: pino({ level: "error" }),
+        logger: bunyan.createLogger({ name: "test", level: "error" }),
         subscriptions: {
           "hello/#": {
             qos: 1
